@@ -1,4 +1,7 @@
 import networkx as nx
+import cvxopt as cvx
+import cvxopt.lapack
+import picos as pic
 
 
 def parse(fileName):
@@ -21,6 +24,56 @@ def parse(fileName):
                     second += line[i]
                     i += 1
                 graph.add_edge(int(first), int(second))
+    return graph
 
                     
-parse("ksoso.txt")
+graph = parse("ksoso.txt")
+
+maxcut = pic.Problem()
+
+N = len(graph)
+X=maxcut.add_variable('X',(N,N),'symmetric')
+LL = 1/4.*nx.laplacian_matrix(graph).todense()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("ok")
+
