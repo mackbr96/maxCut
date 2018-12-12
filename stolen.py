@@ -1,6 +1,7 @@
 import cvxopt as cvx
 import cvxopt.lapack
 import numpy as np
+import networkx as nx
 # Make G undirected.
 G=nx.Graph(G)
 
